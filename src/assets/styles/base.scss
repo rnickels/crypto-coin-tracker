@@ -1,0 +1,34 @@
+$pe-7s-font-path: "../../node_modules/pe7-icon/dist/fonts" !default;
+@import "~pe7-icon/dist/scss/pe-icon-7-stroke";
+@import './icons.scss';
+@import "base/variables";
+@import "base/mixins";
+@import "base/coin";
+@import "base/coin-list";
+@import "base/scrolling-ticker";
+@import "base/typography";
+@import "base/misc";
+@import "base/sidebar-and-main-panel";
+@import "base/buttons";
+@import "base/inputs";
+@import "base/alerts";
+@import "base/tables";
+@import "base/checkbox-radio-switch";
+@import "base/navbars";
+@import "base/footers";
+@import "base/dropdown";
+@import "base/cards";
+@import "base/chartist";
+@import "base/responsive";
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
