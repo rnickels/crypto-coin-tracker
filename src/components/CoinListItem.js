@@ -12,8 +12,8 @@ const CoinListItem = props => {
         <CoinIcon coinSymbol={coin.symbol} />
       </td>
       <td>
-        <Link to={`/coins/${coin.id}`}>
-          <h5>{coin.name}</h5>
+        <Link to={`/coins/${coin.symbol}`}>
+          <h5>{coin.symbol}</h5>
         </Link>
       </td>
       <td>{coin.symbol}</td>

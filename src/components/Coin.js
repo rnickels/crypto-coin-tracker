@@ -1,26 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-// import { fetchCoinDetails, fetchCoinHistory } from '../reducers/coinList'
 import { Row, Col } from 'react-bootstrap'
+import { getCoinHistory } from '../reducers/coinDetails'
 import CoinIcon from './CoinIcon'
 // import LineChart from './LineChart'
 // import LineChartToolTip from './LineChartToolTip'
 // import InfoBox from './InfoBox'
 
-class Coin extends Component {
+class Coin extends React.Component {
 
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     hoverLoc: null,
-  //     activePoint: null,
-  //   }
-  // }
+  constructor(props) {
+    super(props)
+    this.state = {
+      coinSymbol: this.props.match.params['symbol'],
+      hoverLoc: null,
+      activePoint: null,
+    }
+  }
 
   componentDidMount() {
-    if (this.props.match.params['name']) {
-      // this.props.fetchCoinDetails(this.props.match.params['name'])
-      // this.props.fetchCoinHistory('BTC', 30)
+    if (this.state.coinSymbol) {
+      console.log(this.state.coinSymbol)
+      getCoinHistory(this.state.coinSymbol, 30)
     }
   }
 
@@ -32,9 +33,10 @@ class Coin extends Component {
   // }
 
   render() {
-    let coin = this.props.coinDetails
-    let coin30DayHistory = this.props.coin30DayHistory
-    console.log(coin30DayHistory)
+    let coin = this.props.coin
+    let symbol = this.state.coinSymbol
+    // let coin30DayHistory = this.props.coin30DayHistory
+    // console.log(coin30DayHistory)
     return (
       <div className="container">
         <div className="row">
@@ -63,7 +65,7 @@ class Coin extends Component {
         <div className="coin content">
           <Row>
             <Col xs={1}>
-              <CoinIcon coinSymbol={coin.symbol} />
+              <CoinIcon coinSymbol={symbol} />
             </Col>
             <Col xs={4}>
               <h4>{coin.name}</h4>
@@ -87,13 +89,7 @@ class Coin extends Component {
 }
 
 const mapStateToProps = state => ({
-  coinDetails: state.coins.coinDetails,
-  coinHistory: state.coins.coinHistory,
+  coin: state.coinDetails,
 })
 
-const mapDispatchToProps = dispatch => ({
-  // fetchCoinDetails: (name) => dispatch(fetchCoinDetails(name)),
-  // fetchCoinHistory: (symbol, days) => dispatch(fetchCoinHistory(symbol, days))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Coin)
+export default connect(mapStateToProps)(Coin)
