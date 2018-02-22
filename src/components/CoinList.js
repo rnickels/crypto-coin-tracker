@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import { Table } from 'react-bootstrap'
 import CoinListHeader from './CoinListHeader'
 import CoinListItem from './CoinListItem'
-import { fetchCoins } from '../reducers/coins'
+import { getCoinList } from '../reducers/coinList'
 
 class CoinList extends Component {
 
   componentDidMount() {
-    this.props.fetchCoins()
+    this.props.getCoinList()
   }
 
   render() {
@@ -34,11 +34,11 @@ class CoinList extends Component {
 }
 
 const mapStateToProps = state => ({
-  coinList: state.coins.coinList
+  coinList: state.coinList.coins
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchCoins: () => dispatch(fetchCoins()),
+  getCoinList: () => dispatch(getCoinList())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoinList)

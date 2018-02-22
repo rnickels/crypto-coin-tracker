@@ -10,7 +10,7 @@ import MobileMenu from '../../components/MobileMenu'
 import CoinList from '../../components/CoinList'
 import Coin from '../../components/Coin'
 import ScrollingTicker from '../../components/ScrollingTicker'
-import { fetchCoins } from '../../reducers/coins'
+// import { fetchCoins } from '../../reducers/coinList'
 
 const Main = ({ mobileNavVisibility, hideMobileMenu, history, coinList }) => {
   history.listen(() => {
@@ -19,21 +19,21 @@ const Main = ({ mobileNavVisibility, hideMobileMenu, history, coinList }) => {
     }
   })
 
-  if (!coinList || coinList.length === 0) {
-    fetchCoins()
-  }
+  // if (!coinList || coinList.length === 0) {
+  //   fetchCoins()
+  // }
 
   return (
     <div className={cx({
       'nav-open': mobileNavVisibility === true
     })}>
-      <ScrollingTicker coins={coinList} />
+      { /* <ScrollingTicker coins={coinList} /> */}
       <div className="wrapper">
         <SideBar />
         <div className="main-panel">
           <Header />
           <Route exact path="/" component={CoinList} />
-          <Route path="/coins/:name?" component={Coin} />
+          { /* <Route path="/coins/:name?" component={Coin} /> */}
         </div>
       </div>
       <MobileMenu />
@@ -43,12 +43,12 @@ const Main = ({ mobileNavVisibility, hideMobileMenu, history, coinList }) => {
 
 const mapStateToProps = state => ({
   mobileNavVisibility: state.layout.mobileNavVisiblity,
-  coinList: state.coins.coinList,
+  coinList: state.coins,
 })
 
 const mapDispatchToProps = dispatch => ({
   hideMobileMenu: () => dispatch(setMobileNavVisibility(false)),
-  fetchCoins: () => dispatch(fetchCoins()),
+  // fetchCoins: () => dispatch(fetchCoins()),
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main))
