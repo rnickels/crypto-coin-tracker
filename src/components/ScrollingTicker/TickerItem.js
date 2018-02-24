@@ -1,8 +1,8 @@
 import React from 'react'
-import FormattedCurrencyString from './FormattedCurrencyString'
-import PriceChangeArrowIcon from './PriceChangeArrowIcon'
+import FormattedCurrencyString from '../FormattedCurrencyString'
+import PriceChangeArrowIcon from '../PriceChangeArrowIcon'
 
-const ScrollingTickerItem = props => {
+const TickerItem = props => {
   let { symbol, price_usd, percent_change_24h } = props.coin
   let color = getColorClass(percent_change_24h)
   return (
@@ -25,4 +25,4 @@ const getColorClass = percentChange => {
   return color
 }
 
-export default ScrollingTickerItem
+export default TickerItem

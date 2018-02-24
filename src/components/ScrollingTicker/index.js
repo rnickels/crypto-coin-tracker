@@ -1,5 +1,5 @@
 import React from 'react'
-import ScrollingTickerItem from './ScrollingTickerItem';
+import TickerItem from './TickerItem';
 
 const ScrollingTicker = props => {
   return (
@@ -7,7 +7,7 @@ const ScrollingTicker = props => {
       <span>
         {
           props.coins.map(coin => {
-            return <ScrollingTickerItem key={coin.symbol} coin={coin} />
+            return <TickerItem key={coin.symbol} coin={coin} />
           })
         }
       </span>
