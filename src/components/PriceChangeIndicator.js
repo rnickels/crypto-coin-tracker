@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PriceChangeArrowIcon = props => {
+const PriceChangeIndicator = props => {
   let { icon, color } = getIconClasses(props.percentChange)
   return (
     <i className={`${icon} ${color} ${props.size}`}></i>
@@ -24,9 +24,9 @@ const getIconClasses = percentChange => {
   return { icon, color }
 }
 
-PriceChangeArrowIcon.defaultProps = {
+PriceChangeIndicator.defaultProps = {
   percentChange: 0,
   size: ''
 }
 
-export default PriceChangeArrowIcon
+export default PriceChangeIndicator

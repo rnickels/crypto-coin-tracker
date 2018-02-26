@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import CoinIcon from './CoinIcon'
-import FormattedCurrencyString from './FormattedCurrencyString'
-import PriceChangeArrowIcon from './PriceChangeArrowIcon';
+import CoinIcon from '../../CoinIcon'
+import FormattedCurrencyString from '../../FormattedCurrencyString'
+import PriceChangeIndicator from '../../PriceChangeIndicator';
 
 const CoinListItem = props => {
   let coin = props.coin
@@ -21,11 +21,11 @@ const CoinListItem = props => {
         <FormattedCurrencyString value={coin.price_usd} />
       </td>
       <td>
-        <PriceChangeArrowIcon percentChange={coin.percent_change_24h} size={'fa-lg'} />
+        <PriceChangeIndicator percentChange={coin.percent_change_24h} size={'fa-lg'} />
         {coin.percent_change_24h}%
       </td>
       <td>
-        <PriceChangeArrowIcon percentChange={coin.percent_change_7d} size={'fa-lg'} />
+        <PriceChangeIndicator percentChange={coin.percent_change_7d} size={'fa-lg'} />
         {coin.percent_change_7d}%
       </td>
       <td>

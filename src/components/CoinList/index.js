@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Table } from 'react-bootstrap'
 import CoinListHeader from './CoinListHeader'
 import CoinListItem from './CoinListItem'
-import { getCoinList } from '../reducers/coinList'
+import { getCoinList } from '../../reducers/coinList'
 
 class CoinList extends Component {
 

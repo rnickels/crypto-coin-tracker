@@ -1,6 +1,6 @@
 import React from 'react'
-import FormattedCurrencyString from '../FormattedCurrencyString'
-import PriceChangeArrowIcon from '../PriceChangeArrowIcon'
+import FormattedCurrencyString from '../../FormattedCurrencyString'
+import PriceChangeIndicator from '../../PriceChangeIndicator'
 
 const TickerItem = props => {
   let { symbol, price_usd, percent_change_24h } = props.coin
@@ -9,7 +9,7 @@ const TickerItem = props => {
     <div className="scrolling-ticker-item">
       <div><b>{symbol}</b></div>
       <FormattedCurrencyString value={price_usd} />
-      <PriceChangeArrowIcon percentChange={percent_change_24h} />
+      <PriceChangeIndicator percentChange={percent_change_24h} />
       <div className={`percent-change ${color}`}>{percent_change_24h}%</div>
     </div>
   )

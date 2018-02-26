@@ -9,7 +9,6 @@ import createLogger from 'redux-logger'
 import { Provider } from 'react-redux'
 import reducers from './reducers'
 import sagas from './sagas'
-// import { getCoinList } from './reducers/coinList'
 import Main from './pages/Main'
 import './assets/styles/base.scss'
 
@@ -24,6 +23,8 @@ const store = createStore(
 )
 
 sagaMiddleware.run(sagas)
+
+// GdaxWebSockets()
 
 // store.dispatch(getCoinList())
 
