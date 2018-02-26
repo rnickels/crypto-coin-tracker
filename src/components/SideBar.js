@@ -19,7 +19,13 @@ const SideBar = ({
           <li className={location.pathname === '/' ? 'active' : null}>
             <Link to="/">
               <i className="pe-7s-graph"></i>
-              <p>Dashboard</p>
+              <p>Coin List</p>
+            </Link>
+          </li>
+          <li className={location.pathname === '/login' ? 'active' : null}>
+            <Link to="/login">
+              <i className="pe-7s-graph"></i>
+              <p>Login</p>
             </Link>
           </li>
         </ul>

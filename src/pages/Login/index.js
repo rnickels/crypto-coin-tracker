@@ -1,5 +1,6 @@
 import React from 'react'
-import { connect } from 'redux'
+import { connect } from 'react-redux'
+import { Button, FormGroup, Row } from 'react-bootstrap'
 import { signInUser } from '../../reducers/user'
 
 class Login extends React.Component {
@@ -31,21 +32,31 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="user-login">
+      <div className="user-login content">
         <form>
-          <label>Email</label>
-          <input type="text"
-            name="email"
-            placeholder="Email"
-            value={this.state.emailInput}
-            onChange={this.handleChange} />
-          <label>Password</label>
-          <input type="password"
-            name="password"
-            placeholder="Password"
-            value={this.state.passwordInput}
-            onChange={this.handleChange} />
-          <input type="submit" value="submit" />
+          <FormGroup>
+            <Row>
+              <label>Email</label>
+              <input type="text"
+                name="email"
+                placeholder="Email"
+                value={this.state.emailInput}
+                onChange={this.handleChange} />
+            </Row>
+            <Row>
+              <label>Password</label>
+              <input type="password"
+                name="password"
+                placeholder="Password"
+                value={this.state.passwordInput}
+                onChange={this.handleChange} />
+            </Row>
+            <Row>
+              <Button bsStyle="primary" onClick={this.handleSubmit}>
+                Sign In
+              </Button>
+            </Row>
+          </FormGroup>
         </form>
       </div>
     )

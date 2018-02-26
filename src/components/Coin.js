@@ -20,7 +20,6 @@ class Coin extends React.Component {
 
   componentDidMount() {
     if (this.state.coinSymbol) {
-      console.log(this.state.coinSymbol)
       getCoinHistory(this.state.coinSymbol, 30)
     }
   }

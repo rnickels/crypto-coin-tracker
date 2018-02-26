@@ -8,6 +8,7 @@ import SideBar from '../../components/SideBar'
 import MobileMenu from '../../components/MobileMenu'
 import CoinList from '../../components/CoinList'
 import Coin from '../../components/Coin'
+import Login from '../Login'
 import ScrollingTicker from '../../components/ScrollingTicker'
 import { getCoinList } from '../../reducers/coinList'
 
@@ -32,6 +33,7 @@ const Main = ({ mobileNavVisibility, hideMobileMenu, history, coinList }) => {
         <div className="main-panel">
           <Header />
           <Route exact path="/" component={CoinList} />
+          <Route exact path="/login" component={Login} />
           <Route path="/coins/:symbol?" component={Coin} />
         </div>
       </div>
